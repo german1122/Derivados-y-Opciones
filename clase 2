@@ -1,0 +1,326 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Clase 2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "De la anterior clase, en el caso más general tenemos\n",
+    "\n",
+    "$$F(S_t, T-t) = S_te^{c(T-t)}$$ , donde $c \\equiv$ costo de acarreo\n",
+    " \n",
+    " En el caso en el que no hay costos, $$F(S_t, T-t) = S_te^{r(T-t)}$$.\n",
+    " Asimismo, cuando tenemos un futuro con un costo de conveniencia, \n",
+    " \n",
+    "$$F(S_t, T-t) = S_te^{(r-q)(T-t)}$$\n",
+    "\n",
+    "Así, \n",
+    "$$F(S_t, T-t) = S_te^{(r+u-q-y)(T-t)} = F(S_t, T-t) = S_te^{c(T-t)}$$ \n",
+    "\n",
+    "*Alguno de los anteriores es el dividend yield*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "El dólar es una mercancía que paga un dividend yield. Por ejemplo, \n",
+    "\n",
+    "$$F^{US\\$}(S_t, T-t) = S_te^{(r^{MX}-r^{USA})(T-t)}$$\n",
+    "\n",
+    "Del mismo modo, \n",
+    "\n",
+    "$$F^{MX\\$}(S_t, T-t)\\Bigg(\\frac{1}{S_t}\\Bigg)e^{(r^{USA}-r^{MX})(T-t)} = \\frac{1}{F^{US\\$}}$$\n",
+    "\n",
+    "Para los siguientes valores,\n",
+    "\n",
+    "$$18.9e^{(3.5\\%-0.5\\%)·1} = 19.47559$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Futuro de la bolsa mexicana de valores:\n",
+    "    \n",
+    "   $$f(S_t, T-t) = [F(S_t, T-t)-k]e^{-r(T-t)} = S_te^{-q(T-t)} - ke^{-r(T-t)} = S_t[e^{-q(T-t)}]-k[e^{-r^{MX}(T-t)}]$$\n",
+    "    \n",
+    "    * Largo spot IBMV\n",
+    "    *\n",
+    "    * Corto por Gob MX"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Si los costos o los justos no se pueden descontar a una tasa continua, simplemente se descuentan directamente. \n",
+    "$$F = (S_t-I)e^{r(T-t)}$$\n",
+    "\n",
+    "Si se tuviera que pagar una renta de forma periódica, donde $u $ es el costo de almacenamiento o mantenimiento,\n",
+    "\n",
+    "$$F = (S_t+U)e^{r(T-t)}$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "El futuro no es el valor esperado del dólar, simplemente es el precio seguro. El Futuro del dólar es el valor seguro al cual podemos comprar el dólar en el futuro, más no su valor esperado. \n",
+    "\n",
+    "$$S_t = \\alpha + \\beta F + \\epsilon_{t+1}$$\n",
+    "\n",
+    "$$H_0: \\beta = 1$$\n",
+    "\n",
+    "Si beta es 1, entonces puedes utilizar el futuro como pronosticador insesgado del precio a futuro de la mercancía. \n",
+    "\n",
+    "También se puede realizar de la siguiente manera, \n",
+    "\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Bonos\n",
+    "\n",
+    "$$VF \\equiv p(t, T) = \\frac{1}{Y^T}  = 1·e^{-yT}\\Longrightarrow  Y = \\frac{1}{p(t, T)^{\\frac{1}{T}}} \\Longrightarrow y = \\ln(Y) = -\\frac{1}{T} \\ln(p(t, T))$$\n",
+    "\n",
+    "donde $y \\equiv$ yield del bono y $p$ es el precio spot. $VF \\equiv$ valor facial. \n",
+    "\n",
+    "Valor presente de un bono (veamos un repaso), \n",
+    "\n",
+    "$$p(t, T, y, c\\%) = \\sum_{k=1}^T cF_k e^{-yk},$$\n",
+    "\n",
+    "donde $CF_k = C\\% VF, \\forall k <T$.\n",
+    "\n",
+    "$$CF_T = VF + C\\%VF = (1+c\\%)VF, \\forall k = T$$\n",
+    "\n",
+    "Así, \n",
+    "\n",
+    "$$p(t, T, y, c\\%) = \\sum_{k=1}^T cF_k e^{-yk} = c\\%VFe^{-y·\\frac{1}{2}} + c\\%VFe^{-y} +  \\ldots + (1+c\\%)VFe^{-yT}$$\n",
+    "\n",
+    "Los bonos m's tienen cupones se emiten a diferentes plazos. Cada uno de estos bonos trae cupones con diferentes periodicidades. \n",
+    "Bono encuerado: compro un bono a diez años y tendré veinte pagos de efectivo (uno cada seis meses). Tengo tres clientes que quieren invertir a medio año, un año, cinco y diez año. Compro un bono m y les vendo todos los pedazos del bono. Ese es un negocio de distribución para ajustarse a las preferencias de los clientes. Los bonos pueden ser con cupones o sin cupones. Sin cupones se llaman de cupon cero. \n",
+    "\n",
+    "Ahora, ¿xcómo evaluamos un bono que tenga cupones? Tendremos un plazo y una estructura de tasa de interés. Tenemos tasa de interés para un año, diez años, overnight. Las tasas de interés de otros bonos se determinan con base en el interés del bono de cupón cero. Es decir la estructura de tasa de interés se extrae con bonos cupón cero. Si tenemos esta estructura podemos evaluar un bono cupón cero o un bono con cupones. \n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "Aquí va pic1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Con base en la figura 1, \n",
+    "\n",
+    "$$p(t, T, y, c\\%) =c\\%VFe^{-r_{1/2}·\\frac{1}{2}} + c\\%VFe^{-r_1·1} +  \\ldots + (1+c\\%)VFe^{-r_TT}$$\n",
+    "\n",
+    "El yield es un rendimiento, mas no una tasa de interés. Es una forma compacta de expresar precios. Es decir, negocian el yield. La diferencia entre tasa de interés y yield yace en que para el yield la tasa es constante, mientras que para la tasa de interés hay una tasa de interés distinta para cada periodo. Note que $C\\%$ es la tasa cupón. \n",
+    "\n",
+    "Cuando el bono no tiene cupones, el yield y la tasa de interés son lo mismo. Es decir, para un bono cupón cero. \n",
+    "\n",
+    "La pregunta es ¿cómo cambia el precio del bono ante un cambio en el yield?\n",
+    "\n",
+    "$$\\frac{\\partial p(t, T)}{\\partial y} = \\frac{\\partial (1·e^{-yT})}{\\partial T} = -T·1·e^{-yT} = -Tp(T,t)$$\n",
+    "\n",
+    "Duración del bono $\\equiv \\frac{\\frac{\\partial p}{\\partial y}}{p} = -T$\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "¿Qué pasa si ahora queremos calcular la duración de un bono que paga cupones?\n",
+    "\n",
+    "Vamos a suponer que todas las tasas de interés se desplazan en forma paralela (monótonamente). Si esto no pasa, entonces la duración es la sensibilidad al rendimiento del bono, mas no a la tasa de interés. \n",
+    "\n",
+    "El bono lo podemos escribir de la suguiente manera. Tendremos una serie de pagos,\n",
+    "\n",
+    "$$p(t, T, c\\%, y) = \\sum_{k=\\frac{1}{2}}^T c\\% VFe^{-yk} + VFe^{-yT}$$\n",
+    "\n",
+    "Así, \n",
+    "\n",
+    "$$\\frac{\\partial P}{\\partial y} = \\sum (-c\\% VF k)e^{-yk} -TVFe^{-yT} \\Longrightarrow \\frac{\\frac{\\partial P}{\\partial y}}{p} = -\\sum \\Bigg[\\frac{kc\\% VF e^{-yk}}{p}\\Bigg] -T\\frac{VF}{p}e^{-yT} = -\\sum_{k=\\frac{1}{2}}^{T-1} k\\Bigg[\\frac{kc\\% VF e^{-yk}}{p}\\Bigg] -T\\frac{VF(1+c\\%)}{p}e^{-yT} $$\n",
+    "\n",
+    "Por consiguiente, \n",
+    "\n",
+    "$$\\frac{\\frac{\\partial P}{\\partial y}}{p} = -\\sum_{k=\\frac{1}{2}}^Tw_kk,$$\n",
+    "\n",
+    "donde $w_k = \\frac{c\\% VF e^{-\\frac{1}{T}}}{p}$ y $w_T = \\frac{(1+c\\%) VF e^{-\\frac{1}{T}}}{p}$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "pic 2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Supongamos que tenemos las siguientes condiciones,\n",
+    "\n",
+    "$y = 6.5$, $D = 7$. Por tanto, la caída del precio del bono es $-7(6.8\\%-6.5\\%) = -7.03\\%$. Ahora volvamos a la gráfica del precio del bono. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "pic 3"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "La duración es una derivado y por lo tanto es una medida de sensibilidad ante cambios en la tasa de interés. La curva del precio del bono es convexa. Por tanto, una aproximación basada en una derivada es una aproximación muy pobre, dado que tenemos que tomar en cuenta la convexidad del bono. \n",
+    "\n",
+    "Convexidad $\\equiv \\sum_{k = \\frac{1}{2}}^T w_k k^2$. Variando la estructura de pagos, varía la convexidad. si la tasa del yield baja, el precio del bono sube. Si las tasas ban a subir o bajar, te proteges con el bono más convexo. Por tanto, tener mayor convexidad es algo bueno. ¿Cómo podría usar la convexidad?\n",
+    "\n",
+    "Mediante una expansión de Taylor de segundo orden, \n",
+    "\n",
+    "$$\\frac{dp}{p} \\equiv -Ddy + \\frac{1}{2}C \\partial y^2 = -[D-\\frac{1}{2}cdy]dy = -D^*dy$$\n",
+    "\n",
+    "Tenemos que entender la Estructura de tasa de interés como primitivo y como subyacente. \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# ¿Cuál es el precio spot de un bono cupón cero usando un valor facial igual a uno?\n",
+    "\n",
+    "$$S_t = p(t, T^*) = 10^{-r_TT}$$\n",
+    "\n",
+    "La Fecha del futuro es $T$. Así, $F(S_t, T-t) = S_te^{r(T-t)} = (1·e^{-r_TT^*})e^{r_TT}$\n",
+    "\n",
+    "Este contrato de futuro se vence en $T$, entonces tendremos el bono de $T^*$ a $T$.\n",
+    "\n",
+    "Así, \n",
+    "\n",
+    "$$F(S_t, T-t) = (p(t, T, c\\%, y) - I)e^{r_TT}$$\n",
+    "\n",
+    "Todo bono puede representarse en términos de un precio o un rendimiento. \n",
+    "\n",
+    "$$I = \\sum_{k = \\frac{1}{2}}^{T^*} C\\% VF e^{-r_kk}$$\n",
+    "\n",
+    "Analicemos un poco más a detalle el futuro del bono cupón cero con valor facial igual a uno. \n",
+    "\n",
+    "\n",
+    "$$F(S_t, T-t) = S_te^{r(T-t)} = (1·e^{-r_TT^*})e^{r_TT} = 1·e^{r_TT-r_{T^*}T^*} = 1·e^{frac{-(r_{T^*}T^*-r_TT)(T^*-T)}{(T^*-T)}} = 1·e^{-r^{f(T^*-T)}}$$\n",
+    "\n",
+    "Así, \n",
+    "\n",
+    "$$r^f = \\frac{r_{T^*}T^*-r_TT}{T^*-T} \\Longrightarrow r^f(t, T, T^*) = \\frac{r_{T^*}T^*-r_TT}{T^*-T}   $$\n",
+    "\n",
+    "\n",
+    "tasa forward:\n",
+    "\n",
+    "$t$ es la fecha inicial, $T$ es la fecha en la que vence el contrato, mientras que $T^*$ es la fecha en la que vence el bono. \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Operemos un poco en la tasa forward discreta, dado que podemos variar el plazo entre $T$ y $T^*$.\n",
+    "\n",
+    "$$r^f(t, T, T^*) = r_T + \\frac{r_{T^*}T^*-r_TT}{T^*-T} - r_T\\frac{T^*-T}{T^*-T} = r_T + T^*\\frac{r_{T^*}-r_t}{T^*-T}$$\n",
+    "\n",
+    "$$T^* = T + D_t$$\n",
+    "\n",
+    "$$r^f() = r_T + (T +DT)\\frac{(T+D_t)(r_{t+D_t}-r_T)}{\\Delta T}$$\n",
+    "\n",
+    "$$\\Delta T \\rightarrow 0$$\n",
+    "\n",
+    "### Tasa forward instantánea:\n",
+    "\n",
+    "$$r^f(t, T) = r_T + T\\frac{\\partial r}{\\partial T}$$\n",
+    "\n",
+    "Si la forward es una derivada, la spot es una spot. Es exactamente lo mismo tener la forward que la spot. \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "pic 4"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Obtengamos la Spot\n",
+    "\n",
+    "$$\\int_0^T r^f(t, T)dt = \\int_0^Tr_T + \\int_0^T \\frac{\\partial r}{\\partial T} = \\int_0^Tr_Tdt + \\Bigg[\\int_0^T Tr_Tdt - \\int_0^T r_Tdt\\Bigg] = \\int_0^TTr_Tdt = Tr_T-0r_0$$\n",
+    "\n",
+    "Note que $r_T = \\frac{1}{T}\\int_0^Tr^f dt$. Un mercado que depende de expectativas no sirve porque las expectativas son subjetivas. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Nos aproximamos a la curva forward mediante futuros. Ahora lo haremos mediante un FRAG (Forward Rate Agreement). "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
